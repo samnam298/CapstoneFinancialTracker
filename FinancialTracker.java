@@ -96,7 +96,9 @@ public class FinancialTracker {
                 String line = fileScanner.nextLine().trim();
                 if (line.isEmpty()) continue;  // skip blanks
 
-
+                // Split each line by the pipe symbol |
+                String[] parts = line.split("\\|");
+                if (parts.length != 5) continue;
 
                 Transaction t = new Transaction(date, time, description, vendor, amount);
                 transactions.add(t);
