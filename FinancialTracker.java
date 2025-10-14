@@ -99,7 +99,12 @@ public class FinancialTracker {
                 // Split each line by the pipe symbol |
                 String[] parts = line.split("\\|");
                 if (parts.length != 5) continue;
-
+                // Parse and create a Transaction object
+                LocalDate date = LocalDate.parse(parts[0], DATE_FMT);
+                LocalTime time = LocalTime.parse(parts[1], TIME_FMT);
+                String description = parts[2];
+                String vendor = parts[3];
+                double amount = Double.parseDouble(parts[4]);
                 Transaction t = new Transaction(date, time, description, vendor, amount);
                 transactions.add(t);
             }
