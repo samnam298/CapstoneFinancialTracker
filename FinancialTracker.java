@@ -88,7 +88,25 @@ public class FinancialTracker {
                 return;
             }
         }
+// ✅ Clear previous data before loading again
+        transactions.clear();
 
+        try (Scanner fileScanner = new Scanner(file)) {
+            while (fileScanner.hasNextLine()) {
+                String line = fileScanner.nextLine().trim();
+                if (line.isEmpty()) continue;  // skip blanks
+
+
+
+                Transaction t = new Transaction(date, time, description, vendor, amount);
+                transactions.add(t);
+            }
+            System.out.println("✅ Loaded " + transactions.size() + " transactions.");
+
+        } catch (Exception e) {
+            System.out.println("⚠️ Error reading file: " + e.getMessage());
+        }
+    }
 
 
 
