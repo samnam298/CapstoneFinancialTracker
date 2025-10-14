@@ -75,6 +75,22 @@ public class FinancialTracker {
         //       parse the five fields, build a Transaction object,
         //       and add it to the transactions list.
     }
+    public static void loadTransactions(String fileName) {
+        File file = new File(fileName);
+
+        // ✅ If the file doesn’t exist, create it first
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+                System.out.println("Created new empty file: " + fileName);
+            } catch (Exception e) {
+                System.out.println("Error creating file: " + e.getMessage());
+                return;
+            }
+        }
+
+
+
 
     /* ------------------------------------------------------------------
        Add new transactions
