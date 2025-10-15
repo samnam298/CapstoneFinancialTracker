@@ -98,8 +98,10 @@ public class FinancialTracker {
      */
     private static void appendTransaction(Transaction t) {
         try {
+            // open the CSV file in append mode (true)
             BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, true));
 
+            // write the new transaction as one formatted line
             writer.write(String.format("%s|%s|%s|%s|%.2f%n",
                     t.getDate().format(DATE_FMT),
                     t.getTime().format(TIME_FMT),
@@ -107,6 +109,7 @@ public class FinancialTracker {
                     t.getVendor(),
                     t.getAmount()));
 
+            // close the file and add it to the list in memory
             writer.close();
             transactions.add(t);
 
@@ -127,8 +130,33 @@ public class FinancialTracker {
      * Validate that the amount entered is positive.
      * Store the amount as-is (positive) and append to the file.
      */
+
     private static void addDeposit(Scanner scanner) {
-        // TODO
+        try {
+            System.out.print("Enter description: ");
+            String description = scanner.nextLine();
+
+            System.out.print("Enter vendor: ");
+            String vendor = scanner.nextLine();
+
+            System.out.print("Enter amount (positive number): ");
+            double amount = Double.parseDouble(scanner.nextLine());
+
+            if (amount <= 0) {
+                System.out.println("❌ Amount must be positive!");
+                return;
+            }
+
+            LocalDate date = LocalDate.now();
+            LocalTime time = LocalTime.now();
+
+            Transaction t = new Transaction(date, time, description, vendor, amount);
+            appendTransaction(t);
+
+            System.out.println("✅ Deposit added successfully!");
+        } catch (Exception e) {
+            System.out.println("⚠️ Error adding deposit: " + e.getMessage());
+        }
     }
 
     /**
@@ -137,7 +165,32 @@ public class FinancialTracker {
      * then converted to a negative amount before storing.
      */
     private static void addPayment(Scanner scanner) {
-        // TODO
+        try {
+            System.out.print("Enter description: ");
+            String description = scanner.nextLine();
+
+            System.out.print("Enter vendor: ");
+            String vendor = scanner.nextLine();
+
+            System.out.print("Enter amount (positive number): ");
+            double amount = Double.parseDouble(scanner.nextLine());
+
+            if (amount <= 0) {
+                System.out.println("❌ Amount must be positive!");
+                return;
+            }
+
+            amount = -Math.abs(amount); // make it negative for payment
+            LocalDate date = LocalDate.now();
+            LocalTime time = LocalTime.now();
+
+            Transaction t = new Transaction(date, time, description, vendor, amount);
+            appendTransaction(t);
+
+            System.out.println("✅ Payment recorded successfully!");
+        } catch (Exception e) {
+            System.out.println("⚠️ Error adding payment: " + e.getMessage());
+        }
     }
 
     /* ------------------------------------------------------------------
