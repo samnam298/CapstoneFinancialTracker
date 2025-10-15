@@ -1,19 +1,22 @@
-# Project Title
-
+# Financial Tracker Application
 ## Description of the Project
 
-Briefly describe what this Java console application does. Mention its purpose and who the intended users are. Explain the main functionality and what problems it aims to solve.
+This Java console application is a simple accounting ledger for tracking personal or small-business finances. It lets users record deposits and payments, stores them in a CSV file, and displays reports by date or vendor. Designed for individuals or small business owners, it helps organize and monitor income 
+and expenses without using complex accounting software.
 
 ## User Stories
-
-List the user stories that guided the development of your application. Format these stories as: "As a [type of user], I want [some goal] so that [some reason]."
-
 - As a user, I want to be able to input my data, so that the application can process it accordingly.
 - As a user, I want to receive immediate feedback, so I can understand what to do next.
 
 ## Setup
-
-Instructions on how to set up and run the project using IntelliJ IDEA.
+Open IntelliJ → create a new Java Project.
+ make a package named com.pluralsight.
+Add two files: FinancialTracker.java and Transaction.java → write the code.
+In the project folder, create an empty file named transactions.csv.
+Click Run on FinancialTracker.java to start.
+Use the menu to add deposits, 
+payments, or view reports 
+all data saves automatically to transactions.csv.
 
 ### Prerequisites
 
@@ -32,8 +35,8 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Technologies Used
 
-- Java: Mention the version you are using.
-- Any additional libraries or frameworks used in the project.
+- Java: Java 17
+- no additional libraries or frameworks used in the project.
 
 ## Demo
 
