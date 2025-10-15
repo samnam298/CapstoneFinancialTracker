@@ -47,6 +47,11 @@ public class FinancialTracker {
             }
         }
         scanner.close();
+        System.out.println("========================================");
+        System.out.println("Thank you for using SApplication Ledger!");
+        System.out.println("Goodbye 👋");
+        System.out.println("========================================");
+
     }
 
     /* ------------------------------------------------------------------
