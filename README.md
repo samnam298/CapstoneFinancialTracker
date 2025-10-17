@@ -5,9 +5,11 @@ This Java console application is a simple accounting ledger for tracking persona
 and expenses without using complex accounting software.
 
 ## User Stories
-- As a user, I want to be able to input my data, so that the application can process it accordingly.
-- As a user, I want to receive immediate feedback, so I can understand what to do next.
-
+-The user should be able to enter transaction 
+details (date, time, description, vendor, and amount)
+through the console or input form.
+-After each input or action, the application 
+should display confirmation messages or prompts.
 ## Setup
 Open IntelliJ → create a new Java Project.
  make a package named com.pluralsight.
@@ -41,19 +43,19 @@ Follow these steps to get your application running within IntelliJ IDEA:
 ## Demo
 
 Include screenshots or GIFs that show your application in action. Use tools like [Giphy Capture](https://giphy.com/apps/giphycapture) to record a GIF of your application.
- [SApplicationdemo](./images/ledger_demo.gif)
+ [SApplicationdemo](ledger_demo.gif)
 
 ## 🎞️ App Demo
 Here’s a short demo of SApplication Ledger in action:
 
-[SApplicationdemo](./images/ledger_demo.gif)
+[SApplicationdemo](ledger_demo.gif)
 
 
 ## Future Work
 
 Outline potential future enhancements or functionalities you might consider adding:
 
-- Additional feature to be developed.
+- Additional feature pictures and nice fonts
 - Improvement of current functionalities.
 
 ## Resources
@@ -61,16 +63,17 @@ Outline potential future enhancements or functionalities you might consider addi
 List resources such as tutorials, articles, or documentation that helped you during the project.
 
 - [Java Programming Tutorial](https://www.example.com)
-- [Effective Java](https://www.example.com)
+- Workbook
+- YouTube tutorial on Java
 
-## Team Members
 
-- **Name 1** - Specific contributions or roles.
-- **Name 2** - Specific contributions or roles.
+##  Done by:
+
+Sam Gebremariam
 
 ## Thanks
 
 Express gratitude towards those who provided help, guidance, or resources:
 
-- Thank you to [Mentor's Name] for continuous support and guidance.
+- Thank you to Maroun, Raymond for continuous support and guidance.
 - A special thanks to all teammates for their dedication and teamwork.
